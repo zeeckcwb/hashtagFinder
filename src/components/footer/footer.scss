@@ -1,0 +1,30 @@
+.footer{
+    width: 100vw;
+    height: 68px;
+    background: #18326B;
+    
+
+    .footerContent{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        p{
+            font-size: 10px;
+            color: #ffffff;
+        }
+    }
+} @media screen and(min-width: 1024px) {
+    .footer{
+        height: 200px;
+        
+        .footerContent{
+
+            p{
+                font-size: 25px;
+            }
+        }
+    }
+}
