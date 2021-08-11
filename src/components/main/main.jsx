@@ -3,6 +3,22 @@ import nature1 from '../../images/provisionally/1.jpg'
 import nature2 from '../../images/provisionally/2.jpg'
 import nature3 from '../../images/provisionally/3.jpg'
 import nature4 from '../../images/provisionally/4.jpg'
+import user1 from '../../images/provisionally/p1.jpg'
+import user2 from '../../images/provisionally/p2.jpg'
+import user3 from '../../images/provisionally/p3.jpg'
+
+function select(){
+    var hiddenImages = document.getElementById("postResultsImages").style.display;
+    var hiddenText = document.getElementById("postResultsText").style.display;
+        if(hiddenImages == "none"){
+            document.getElementById("postResultsImages").style.display = 'flex';
+            document.getElementById("postResultsText").style.display = 'none';
+        }
+        else {
+            document.getElementById("postResultsText").style.display = 'block';
+            document.getElementById("postResultsImages").style.display = 'none';
+        }
+}
 
 export default function Main(){
 
@@ -26,35 +42,89 @@ export default function Main(){
                     <div className="postSearchedTitle">
                         <h2>Exibindo os 10 resultados mais recentes para #natureza</h2>
                     </div>
+                    <div className="postResultSelect">
+                        <div id="selectTweets" onClick={select}>
+                            <p>Tweets</p>
+                        </div>
+                        <div id="selectImages">
+                            <p>Imagens</p>
+                        </div>
+                    </div>
                     <div className="postResults">
-                        <div className="postResultsImages">
+                        <div id="postResultsImages" className="postResultsImages">
                             <div className="imageContainer">
                                 <div className="imageContent" style={{backgroundImage: `url(${nature1})`}}> 
                                 </div>
-                                <p>Postado por:</p>
-                                <p>@twitterusername</p>
+                                <div className="textContent">
+                                    <p>Postado por:</p>
+                                    <p>@twitterusername</p>
+                                </div>
                             </div>
                             <div className="imageContainer">
                                 <div className="imageContent" style={{backgroundImage: `url(${nature2})`}}>
                                 </div>
-                                <p>Postado por:</p>
-                                <p>@twitterusername</p>
+                                <div className="textContent">
+                                    <p>Postado por:</p>
+                                    <p>@twitterusername</p>
+                                </div>
                             </div>
                             <div className="imageContainer">
                                 <div className="imageContent" style={{backgroundImage: `url(${nature3})`}}>
                                 </div>
-                                <p>Postado por:</p>
-                                <p>@twitterusername</p>
+                                <div className="textContent">
+                                    <p>Postado por:</p>
+                                    <p>@twitterusername</p>
+                                </div>
                             </div>
                             <div className="imageContainer">
                                 <div className="imageContent" style={{backgroundImage: `url(${nature4})`}}>
                                 </div>
-                                <p>Postado por:</p>
-                                <p>@twitterusername</p>
+                                <div className="textContent">
+                                    <p>Postado por:</p>
+                                    <p>@twitterusername</p>
+                                </div>
                             </div>
                         </div>
                         <div className="postResultsText">
-
+                            <div className="textContainer">
+                                <div className="userInfos">
+                                    <div className="userThumb" style={{backgroundImage: `url(${user1})`}}>
+                                    </div>
+                                    <div className="userText">
+                                        <p>UserName <span>@twitterusername</span></p>
+                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt...</p>
+                                    </div>
+                                </div>
+                                <div className="seeMore">
+                                    <a href="">Ver mais no Twitter</a>
+                                </div>
+                            </div>
+                            <div className="textContainer">
+                                <div className="userInfos">
+                                    <div className="userThumb" style={{backgroundImage: `url(${user2})`}}>
+                                    </div>
+                                    <div className="userText">
+                                        <p>UserName <span>@twitterusername</span></p>
+                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat...</p>
+                                    </div>
+                                </div>
+                                <div className="seeMore">
+                                    <a href="">Ver mais no Twitter</a>
+                                </div>
+                            </div>
+                            <div className="textContainer">
+                                <div className="userInfos">
+                                    <div className="userThumb" style={{backgroundImage: `url(${user3})`}}>
+                                    </div>
+                                    <div className="userText">
+                                        <p>UserName <span>@twitterusername</span></p>
+                                        <p>RT @username Lorem ipsum dolor sit amet, consetetur, sed diam nonumy eirmod tempor invidunt ut labore et dolore...</p>
+                                    </div>
+                                </div>
+                                <div className="seeMore">
+                                    <a href="">Ver mais no Twitter</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

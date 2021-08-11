@@ -75,16 +75,16 @@
 
 @media screen and (min-width: 1024px) {
   .header {
-    height: 117px;
+    height: 100px;
     padding: 0 60px;
   }
   .header .headerContent .headerLogo {
-    width: 239px;
-    height: 38px;
+    width: 210px;
+    height: 30px;
   }
   .header .headerContent .headerButtons button {
-    width: 170px;
-    height: 50px;
+    width: 150px;
+    height: 40px;
     font-size: 17px;
   }
   .header .headerContent .headerButtons button img {

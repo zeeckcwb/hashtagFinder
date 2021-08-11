@@ -3,8 +3,8 @@
     
     .mainHero{
         width: 100%;
-        height: 100vh;
-        background-image: url(../../images/mobile-hero-bg.jpg);
+        height: 90vh;
+        background-image: url(../../images/hero-bg.jpg);
         background-size: cover;
         background-position: right;
         padding: 135px 30px 0 30px;
@@ -81,45 +81,46 @@
     }
     @media screen and(min-width: 1024px) {
         .mainHero{
-            padding: 250px 140px 0 140px;
+            padding: 23vh 7vw 0 7vw;
             background-image: url(../../images/hero-bg.jpg);
             background-position: right;
 
             .heroContent{
                 
                 .heroTitle{
-                    width: 804px;
+                    width: 600px;
 
                     h1{
-                        font-size: 75px;
+                        font-size: 60px;
                         margin-bottom: 28px;
                         line-height: 1;
                     }
                 }
     
                 .heroText{
-                    width: 608px;
+                    width: 550px;
 
                     p{
-                        font-size: 30px;
-                        margin-bottom: 190px;
+                        font-size: 25px;
+                        margin-bottom: 17vh;
                     }
                 }
             }
 
             .heroSearch{
-                max-width: 1000px;
+                max-width: 900px;
                 margin: 0 auto;
 
                 input{
-                    height: 120px;
+                    height: 80px;
                     border-radius: 60px;
                     font-size: 50px;
-                    padding: 0 60px 0 127px;
-                    background-size: 30px;
+                    font-weight: 400;
+                    padding: 0 60px 0 100px;
+                    background-size: 25px;
                     background-position: 60px;
                 } ::placeholder{
-                    font-size: 50px;
+                    font-size: 40px;
                 }
             }
         }
@@ -127,7 +128,8 @@
 
     .mainPosts{
         width: 100vw;
-        background: #061649;
+        background: rgb(9,25,78);
+        background: linear-gradient(90deg, rgba(11,26,81,1) 0%, rgba(6,22,73,1) 100%);
         padding: 0 140px 0 140px;
 
         .postsContent{
@@ -147,46 +149,253 @@
                 }
             }
 
+            .postResultChoice{
+                display: none;
+            }
+
             .postResults{
                 width: 100%;
+                display: flex;
+                justify-content: space-between;
 
                 .postResultsImages{
                     width: 38%;
+                    height: max-content;
                     display: flex;
                     flex-wrap: wrap;
                     justify-content: space-between;
+                    align-items: flex-start;
                     padding-bottom: 120px;
     
                     .imageContainer{
-                        width: 45%;
+                        width: 46%;
                         position: relative;
 
-                        p{
-                            color: #ffffff;
+                        .textContent{
                             position: absolute;
-                            text-shadow: 0px 0px 10px rgba(0,0,0,1);
-                            left: 20px;
-                        }
-    
-                        :nth-child(2){
-                            font-size: 17px;
-                            bottom: 80px;
-                            font-weight: 300;
-                        }
-    
-                        :nth-child(3){
-                            font-size: 21px;
-                            bottom: 50px;
-                        }
+                            bottom: 40px;
+                            left: 10px;
 
+                            p{
+                                color: #ffffff;
+                                text-shadow: 0px 0px 10px rgba(0,0,0,1);
+                            }
+
+                            :nth-child(1){
+                                font-size: 1vw;
+                                font-weight: 300;
+                            }
+                            :nth-child(2){
+                                font-size: 1.2vw;
+                            }
+                        }
+    
                         .imageContent{
                             width: 100%;
                             padding-bottom: 100%;
                             border-radius: 21px;
                             background-size: cover;
                             background-position: center;
-                            margin-bottom: 37px;
+                            margin-bottom: 30px;
                             opacity: 0.7;
+                        }
+                    }
+                }
+
+                .postResultsText{
+                    width: 55%;
+                    padding-bottom: 120px;
+
+                    .textContainer{
+                        width: 100%;
+                        height: 230px;
+                        background: #0c1b49;
+                        border: 1px solid #1e2c56;
+                        border-radius: 15px;
+                        padding: 50px;
+                        margin-bottom: 40px;
+
+                        .userInfos{
+                            width: 100%;
+                            height: 100%;
+                            display: flex;
+
+                            .userThumb{
+                                width: 80px;
+                                height: 80px;
+                                border-radius: 40px;
+                                background-size: cover;
+                                background-position: center;
+                                margin-right: 25px;
+                            }
+
+                            .userText{
+                                width: 80%;
+                                color: #ffffff;
+                                letter-spacing: 0.23px;
+
+                                :nth-child(1){
+                                    margin-bottom: 5px;
+                                    font-size: 1.4vw;
+
+                                    span{
+                                        font-size: 1vw;
+                                        opacity: 0.4;
+                                    }
+                                }
+                                :nth-child(2){
+                                    font-size: 1vw;
+                                }
+                            }
+                        }
+
+                        .seeMore{
+                            padding-left: 105px;
+
+                            a{
+                                text-decoration: none;
+                                color: #72EFDB;
+                                font-size: 1vw;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media screen and(max-width: 1024px) {
+        .mainPosts{
+            padding: 0 50px 0 50px;
+
+            .postsContent{
+    
+                .postSearchedTitle{
+                    display: none;
+                }
+
+                .postResultSelect{
+                    display: block;
+                    width: 100%;
+                    display: flex;
+                    margin-bottom: 50px;
+
+                    div{
+                        width: 50%;
+                        text-align: center;
+                        border-bottom: 2px solid #1e2c56;
+                        padding: 5px 0;
+
+                        p{
+                            color: #ffffff;
+                        }
+                    }
+                }
+    
+                .postResults{
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+    
+                    .postResultsImages{
+                        display: none;
+                        width: 38%;
+                        height: max-content;
+                        flex-wrap: wrap;
+                        justify-content: space-between;
+                        align-items: flex-start;
+                        padding-bottom: 120px;
+        
+                        .imageContainer{
+                            width: 46%;
+                            position: relative;
+    
+                            .textContent{
+                                position: absolute;
+                                bottom: 40px;
+                                left: 10px;
+    
+                                p{
+                                    color: #ffffff;
+                                    text-shadow: 0px 0px 10px rgba(0,0,0,1);
+                                }
+    
+                                :nth-child(1){
+                                    font-size: 1vw;
+                                    font-weight: 300;
+                                }
+                                :nth-child(2){
+                                    font-size: 1.2vw;
+                                }
+                            }
+        
+                            .imageContent{
+                                width: 100%;
+                                padding-bottom: 100%;
+                                border-radius: 21px;
+                                background-size: cover;
+                                background-position: center;
+                                margin-bottom: 30px;
+                                opacity: 0.7;
+                            }
+                        }
+                    }
+    
+                    .postResultsText{
+                        width: 55%;
+                        padding-bottom: 120px;
+    
+                        .textContainer{
+                            width: 100%;
+                            height: 230px;
+                            background: #0c1b49;
+                            border: 1px solid #1e2c56;
+                            border-radius: 15px;
+                            padding: 50px;
+                            margin-bottom: 40px;
+    
+                            .userInfos{
+                                width: 100%;
+                                height: 100%;
+                                display: flex;
+    
+                                .userThumb{
+                                    width: 80px;
+                                    height: 80px;
+                                    border-radius: 40px;
+                                    background-size: cover;
+                                    background-position: center;
+                                    margin-right: 25px;
+                                }
+    
+                                .userText{
+                                    width: 80%;
+                                    color: #ffffff;
+                                    letter-spacing: 0.23px;
+    
+                                    :nth-child(1){
+                                        margin-bottom: 5px;
+                                        font-size: 1.4vw;
+    
+                                        span{
+                                            font-size: 1vw;
+                                            opacity: 0.4;
+                                        }
+                                    }
+                                    :nth-child(2){
+                                        font-size: 1vw;
+                                    }
+                                }
+                            }
+    
+                            .seeMore{
+                                padding-left: 105px;
+    
+                                a{
+                                    text-decoration: none;
+                                    color: #72EFDB;
+                                    font-size: 1vw;
+                                }
+                            }
                         }
                     }
                 }
