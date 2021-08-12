@@ -97,7 +97,7 @@ export default function Main(){
                                     </div>
                                 </div>
                                 <div className="seeMore">
-                                    <a href="">Ver mais no Twitter</a>
+                                    <a href="#">Ver mais no Twitter</a>
                                 </div>
                             </div>
                             <div className="textContainer">
@@ -110,7 +110,7 @@ export default function Main(){
                                     </div>
                                 </div>
                                 <div className="seeMore">
-                                    <a href="">Ver mais no Twitter</a>
+                                    <a href="#">Ver mais no Twitter</a>
                                 </div>
                             </div>
                             <div className="textContainer">
@@ -123,7 +123,7 @@ export default function Main(){
                                     </div>
                                 </div>
                                 <div className="seeMore">
-                                    <a href="">Ver mais no Twitter</a>
+                                    <a href="#">Ver mais no Twitter</a>
                                 </div>
                             </div>
                         </div>
