@@ -137,6 +137,10 @@
   letter-spacing: 1.6px;
 }
 
+.main .mainPosts .postsContent .postResultSelect {
+  display: none;
+}
+
 .main .mainPosts .postsContent .postResultChoice {
   display: none;
 }
@@ -252,7 +256,7 @@
   font-size: 1vw;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1023px) {
   .main .mainPosts {
     padding: 0 50px 0 50px;
   }
@@ -270,9 +274,21 @@
     text-align: center;
     border-bottom: 2px solid #1e2c56;
     padding: 5px 0;
+    opacity: 0.5;
+    transition: opacity 3s ease-out;
   }
   .main .mainPosts .postsContent .postResultSelect div p {
     color: #ffffff;
+    transition: opacity 3s ease-out;
+  }
+  .main .mainPosts .postsContent .postResultSelect .active {
+    border-bottom: 2px solid #72EFDB;
+    opacity: 1;
+    transition: opacity 3s ease-out;
+  }
+  .main .mainPosts .postsContent .postResultSelect .active p {
+    color: #72EFDB;
+    transition: opacity 3s ease-out;
   }
   .main .mainPosts .postsContent .postResults {
     width: 100%;
@@ -281,90 +297,59 @@
   }
   .main .mainPosts .postsContent .postResults .postResultsImages {
     display: none;
-    width: 38%;
-    height: max-content;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding-bottom: 120px;
-  }
-  .main .mainPosts .postsContent .postResults .postResultsImages .imageContainer {
-    width: 46%;
-    position: relative;
-  }
-  .main .mainPosts .postsContent .postResults .postResultsImages .imageContainer .textContent {
-    position: absolute;
-    bottom: 40px;
-    left: 10px;
-  }
-  .main .mainPosts .postsContent .postResults .postResultsImages .imageContainer .textContent p {
-    color: #ffffff;
-    text-shadow: 0px 0px 10px black;
+    width: 100%;
   }
   .main .mainPosts .postsContent .postResults .postResultsImages .imageContainer .textContent :nth-child(1) {
-    font-size: 1vw;
-    font-weight: 300;
+    font-size: 12px;
   }
   .main .mainPosts .postsContent .postResults .postResultsImages .imageContainer .textContent :nth-child(2) {
-    font-size: 1.2vw;
-  }
-  .main .mainPosts .postsContent .postResults .postResultsImages .imageContainer .imageContent {
-    width: 100%;
-    padding-bottom: 100%;
-    border-radius: 21px;
-    background-size: cover;
-    background-position: center;
-    margin-bottom: 30px;
-    opacity: 0.7;
+    font-size: 14px;
   }
   .main .mainPosts .postsContent .postResults .postResultsText {
-    width: 55%;
+    width: 100%;
     padding-bottom: 120px;
+    display: block;
   }
   .main .mainPosts .postsContent .postResults .postResultsText .textContainer {
     width: 100%;
-    height: 230px;
-    background: #0c1b49;
-    border: 1px solid #1e2c56;
-    border-radius: 15px;
-    padding: 50px;
-    margin-bottom: 40px;
+    height: 150px;
+    padding: 20px 15px;
+    margin-bottom: 20px;
   }
   .main .mainPosts .postsContent .postResults .postResultsText .textContainer .userInfos {
-    width: 100%;
-    height: 100%;
-    display: flex;
+    height: 80%;
   }
   .main .mainPosts .postsContent .postResults .postResultsText .textContainer .userInfos .userThumb {
-    width: 80px;
-    height: 80px;
-    border-radius: 40px;
-    background-size: cover;
-    background-position: center;
-    margin-right: 25px;
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    margin-right: 20px;
   }
   .main .mainPosts .postsContent .postResults .postResultsText .textContainer .userInfos .userText {
     width: 80%;
-    color: #ffffff;
-    letter-spacing: 0.23px;
   }
   .main .mainPosts .postsContent .postResults .postResultsText .textContainer .userInfos .userText :nth-child(1) {
-    margin-bottom: 5px;
-    font-size: 1.4vw;
+    font-size: 12px;
   }
   .main .mainPosts .postsContent .postResults .postResultsText .textContainer .userInfos .userText :nth-child(1) span {
-    font-size: 1vw;
-    opacity: 0.4;
+    font-size: 8px;
   }
   .main .mainPosts .postsContent .postResults .postResultsText .textContainer .userInfos .userText :nth-child(2) {
-    font-size: 1vw;
+    font-size: 12px;
   }
   .main .mainPosts .postsContent .postResults .postResultsText .textContainer .seeMore {
-    padding-left: 105px;
+    padding-left: 80px;
   }
   .main .mainPosts .postsContent .postResults .postResultsText .textContainer .seeMore a {
-    text-decoration: none;
-    color: #72EFDB;
-    font-size: 1vw;
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .main .mainPosts {
+    padding: 0 30px 0 30px;
+  }
+  .main .mainPosts .postsContent .postResults .postResultsText .textContainer .userInfos .userText {
+    width: 70%;
   }
 }
