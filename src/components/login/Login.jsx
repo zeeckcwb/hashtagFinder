@@ -32,7 +32,7 @@ function renderHistoric(){
     );
 }
 
-/*Função de listar usuários na página inicial*/
+/*Função que retorna a tela de login*/
 export default function Login()
 {
     return (
