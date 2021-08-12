@@ -1,7 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import "./historic.css";
-import imgHome from "../../Versão 2/icon-home.svg";
-import imgOut from "../../Versão 2/icon-power-off.svg";
 //import logo from "./Versão 2/logo.svg";
 
 
