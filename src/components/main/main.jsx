@@ -7,17 +7,18 @@ import user1 from '../../images/provisionally/p1.jpg'
 import user2 from '../../images/provisionally/p2.jpg'
 import user3 from '../../images/provisionally/p3.jpg'
 
-function select(){
-    var hiddenImages = document.getElementById("postResultsImages").style.display;
-    var hiddenText = document.getElementById("postResultsText").style.display;
-        if(hiddenImages == "none"){
-            document.getElementById("postResultsImages").style.display = 'flex';
-            document.getElementById("postResultsText").style.display = 'none';
-        }
-        else {
-            document.getElementById("postResultsText").style.display = 'block';
-            document.getElementById("postResultsImages").style.display = 'none';
-        }
+function showImages(){
+    document.getElementById("postResultsImages").style.display = 'flex';
+    document.getElementById("postResultsText").style.display = 'none';
+    document.getElementById("selectImages").classList.add("active")
+    document.getElementById("selectTweets").classList.remove("active")
+}
+
+function showText(){
+    document.getElementById("postResultsText").style.display = 'block';
+    document.getElementById("postResultsImages").style.display = 'none';
+    document.getElementById("selectTweets").classList.add("active")
+    document.getElementById("selectImages").classList.remove("active")
 }
 
 export default function Main(){
@@ -43,10 +44,10 @@ export default function Main(){
                         <h2>Exibindo os 10 resultados mais recentes para #natureza</h2>
                     </div>
                     <div className="postResultSelect">
-                        <div id="selectTweets" onClick={select}>
+                        <div id="selectTweets" onClick={showText}>
                             <p>Tweets</p>
                         </div>
-                        <div id="selectImages">
+                        <div id="selectImages" onClick={showImages}>
                             <p>Imagens</p>
                         </div>
                     </div>
@@ -85,7 +86,7 @@ export default function Main(){
                                 </div>
                             </div>
                         </div>
-                        <div className="postResultsText">
+                        <div id="postResultsText" className="postResultsText">
                             <div className="textContainer">
                                 <div className="userInfos">
                                     <div className="userThumb" style={{backgroundImage: `url(${user1})`}}>
