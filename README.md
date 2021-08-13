@@ -17,4 +17,4 @@ Profissionais envolvidos no projeto:
 - Carlos Dantas           [<img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/linkedin.svg' height='20'>](https://www.linkedin.com/in/carlos-rodrigo-dantas/)
 - Ezequiel Frizon         [<img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/linkedin.svg' height='20'>](https://www.linkedin.com/in/ezequiel-frizon/)
 - Rhaissa Marques      [<img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/linkedin.svg' height='20'>](https://www.linkedin.com/in/rhaissa-marques/)
-- João Paulo                [<img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/linkedin.svg' height='20'>](https://www.linkedin.com/in/jo%C3%A3o-paulo-del-penho-57ba15215/)
+- João Paulo                [<img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/linkedin.svg' height='20'>](https://www.linkedin.com/in/joaopaulodelpenho)
