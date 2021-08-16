@@ -1,8 +1,19 @@
-import React from "react";
+import {useState, useEffect} from 'react'
+import axios from 'axios'
 import './about.css';
 import Image from './about-ilustration.svg';
 
 function ListarSobre(){
+
+   let [squadMembers, setSquadMembers] = useState([]);
+
+    useEffect(() => {
+       axios.get('', {
+           method: "GET",
+       })
+       .then((resp) => {setSquadMembers(resp.data)})
+    },[])
+
     return (
         /*Div responsavel por englobar a página toda*/
         <div className="aboutContainer">
@@ -39,9 +50,9 @@ function ListarSobre(){
                                     <p className="cardsBios">Desenvolvedor Front-End e Desenvolvedor de Jogos.</p>
                                 </div>
                                 <div className="cardsMedia">
-                                    <a><i class="fab fa-github"></i></a>
-                                    <a><i class="fas fa-envelope"></i></a>
-                                    <a><i class="fab fa-linkedin"></i></a>
+                                    <a href=""><i class="fab fa-github"></i></a>
+                                    <a href=""><i class="fas fa-envelope"></i></a>
+                                    <a href=""><i class="fab fa-linkedin"></i></a>
                                 </div>
                             </div>
                             <div className="cards">
