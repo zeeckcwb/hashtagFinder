@@ -15,7 +15,7 @@ function ListarSobre(){
     },[])
 
     return (
-        /*Div responsavel por englobar a página toda*/
+        /*Div responsável por englobar a página toda*/
         <div className="aboutContainer">
             {/*Conteúdo dentro do container about*/}
             <div className="aboutContent">
