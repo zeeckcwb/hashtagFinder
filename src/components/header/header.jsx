@@ -25,9 +25,7 @@ function renderAbout(){
 function renderLogin(){
     ReactDOM.render(
         <React.StrictMode>
-            <Header/>
             <Login/>
-            <Footer/>
         </React.StrictMode>,
         document.getElementById('root')
     );

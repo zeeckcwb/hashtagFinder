@@ -7,12 +7,20 @@ import user1 from '../../images/provisionally/p1.jpg'
 import user2 from '../../images/provisionally/p2.jpg'
 import user3 from '../../images/provisionally/p3.jpg'
 
-/*Função utilizada para alternar as abas de Tweets e Imagens no mobile*/
+/*Função utilizada para alternar as abas Tweets e Imagens no mobile*/
 function showImages(){
     document.getElementById("postResultsImages").style.display = 'flex';
     document.getElementById("postResultsText").style.display = 'none';
     document.getElementById("selectImages").classList.add("active")
     document.getElementById("selectTweets").classList.remove("active")
+}
+
+/*Função utilizada para alternar as abas Tweets e Imagens no mobile*/
+function showText(){
+    document.getElementById("postResultsText").style.display = 'block';
+    document.getElementById("postResultsImages").style.display = 'none';
+    document.getElementById("selectTweets").classList.add("active")
+    document.getElementById("selectImages").classList.remove("active")
 }
 
 /*Função utilizada para alternar as abas de Tweets e Imagens no mobile*/
@@ -46,7 +54,7 @@ export default function Main(){
                         <h2>Exibindo os 10 resultados mais recentes para #natureza</h2>
                     </div>
                     <div className="postResultSelect">
-                        <div className="active" id="selectTweets" onClick={showText}>
+                        <div id="selectTweets" className="active" onClick={showText}>
                             <p>Tweets</p>
                         </div>
                         <div id="selectImages" onClick={showImages}>
