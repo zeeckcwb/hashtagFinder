@@ -16,7 +16,7 @@ function ListarSobre(){
                         </p>
                     </div>
                     <div className="sobreProjetoImg">
-                        <img src={Image}></img>
+                        <img src={Image} alt="Imagem de fundo"></img>
                     </div>
                 </div>
 
@@ -32,7 +32,7 @@ function ListarSobre(){
                         <div className="quemSomosCards">
                             <div className="cards">
                                 <div className="cardsImg">
-                                    <img src="https://freepikpsd.com/media/2019/10/thrall-png-8.png"></img>
+                                    <img src="https://freepikpsd.com/media/2019/10/thrall-png-8.png" alt="Imagem integrante"></img>
                                 </div>
                                 <div className="cardsText">
                                     <p className="cardsNome">Carlos Dantas</p>
@@ -46,7 +46,7 @@ function ListarSobre(){
                             </div>
                             <div className="cards">
                                 <div className="cardsImg">
-                                    <img src="https://freepikpsd.com/media/2019/10/thrall-png-8.png"></img>
+                                    <img src="https://freepikpsd.com/media/2019/10/thrall-png-8.png" alt="Imagem integrante"></img>
                                 </div>
                                 <div className="cardsText">
                                     <p className="cardsNome">Carlos Dantas</p>
@@ -60,7 +60,7 @@ function ListarSobre(){
                             </div>
                             <div className="cards">
                                 <div className="cardsImg">
-                                    <img src="https://freepikpsd.com/media/2019/10/thrall-png-8.png"></img>
+                                    <img src="https://freepikpsd.com/media/2019/10/thrall-png-8.png" alt="Imagem integrante"></img>
                                 </div>
                                 <div className="cardsText">
                                     <p className="cardsNome">Carlos Dantas</p>
@@ -74,7 +74,7 @@ function ListarSobre(){
                             </div>
                             <div className="cards">
                                 <div className="cardsImg">
-                                    <img src="https://freepikpsd.com/media/2019/10/thrall-png-8.png"></img>
+                                    <img src="https://freepikpsd.com/media/2019/10/thrall-png-8.png" alt="Imagem integrante"></img>
                                 </div>
                                 <div className="cardsText">
                                     <p className="cardsNome">Carlos Dantas</p>

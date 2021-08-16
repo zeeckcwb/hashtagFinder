@@ -1,3 +1,5 @@
+@charset "UTF-8";
+/*Estilização do component main*/
 .main {
   width: 100vw;
 }
@@ -275,20 +277,20 @@
     border-bottom: 2px solid #1e2c56;
     padding: 5px 0;
     opacity: 0.5;
-    transition: opacity 3s ease-out;
+    transition: opacity 2s ease-out;
   }
   .main .mainPosts .postsContent .postResultSelect div p {
     color: #ffffff;
-    transition: opacity 3s ease-out;
+    transition: opacity 2s ease-out;
   }
   .main .mainPosts .postsContent .postResultSelect .active {
     border-bottom: 2px solid #72EFDB;
     opacity: 1;
-    transition: opacity 3s ease-out;
+    transition: opacity 2s ease-out;
   }
   .main .mainPosts .postsContent .postResultSelect .active p {
     color: #72EFDB;
-    transition: opacity 3s ease-out;
+    transition: opacity 2s ease-out;
   }
   .main .mainPosts .postsContent .postResults {
     width: 100%;

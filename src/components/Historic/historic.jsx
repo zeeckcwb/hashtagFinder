@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import "./historic.css";
 import ReactDOM from 'react-dom';
 import Main from '../../components/main/main';
