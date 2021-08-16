@@ -15,14 +15,6 @@ function showImages(){
     document.getElementById("selectTweets").classList.remove("active")
 }
 
-/*Função utilizada para alternar as abas Tweets e Imagens no mobile*/
-function showText(){
-    document.getElementById("postResultsText").style.display = 'block';
-    document.getElementById("postResultsImages").style.display = 'none';
-    document.getElementById("selectTweets").classList.add("active")
-    document.getElementById("selectImages").classList.remove("active")
-}
-
 /*Função utilizada para alternar as abas de Tweets e Imagens no mobile*/
 function showText(){
     document.getElementById("postResultsText").style.display = 'block';
