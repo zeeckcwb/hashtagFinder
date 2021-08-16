@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './header.css'
-import logo from '../../images/logo.svg'
+import logo from '../../images/logo.png'
 import iconInfo from '../../images/icon-info-circle.svg'
 import iconUser from '../../images/icon-user-alt.svg'
 import ListarSobre from '../about/about'
