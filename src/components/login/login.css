@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
 
+/*Varsão mobile*/
 .loginPage {
     background-color: #fff;
     display: block;
@@ -13,19 +14,6 @@
 .loginBody {
     display: flex;
     height: 100vh;
-}
-
-button {
-    background-color: #72EFDB;
-    border: none;
-    border-radius: 34px;
-    color: #0B1741;
-    height: 56px;
-    width: 213px;
-    font-family: 'Rubik', sans-serif;
-    font-size: 18px;
-    font-weight: 500;
-    margin-top: 8.31px;
 }
 
 .formContainer {
@@ -51,6 +39,7 @@ color: #72EFDB;
 font-weight: bold;
 margin-bottom: 44.69px;
 font-size: 34px;
+cursor: default;
 }
 
 input {
@@ -83,6 +72,22 @@ input {
     color: #FFF;
  }
 
+.loginForm button {
+    background-color: #72EFDB;
+    border: none;
+    border-radius: 34px;
+    color: #0B1741;
+    height: 56px;
+    width: 213px;
+    font-family: 'Rubik', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 8.31px;
+    cursor: pointer;
+}
+
+/*Versão para desktop*/
+
 @media screen and (min-width: 1024px){
     .loginPage {
     background-image: url(../../images/mobile-hero-bg.jpg);
@@ -103,12 +108,12 @@ input {
         min-height: 400px;
         height: 56.3%;
         max-height: 608px;
-        display: block;
+        display: grid;
         align-items: center;
     }
     
     .loginForm {
-        margin-top: 23.7%;
+        margin: auto;
     }
 
     .formTitle {
