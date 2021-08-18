@@ -123,7 +123,7 @@ export default function Main(){
                                     </div>
                                 </div>
                                 <div className="seeMore">
-                                    {/*</div><a href="https://twitter.com/"+{t.user.screen_name}+"/status/"+{t.id_str}+""Ver mais no Twitter</a>*/}
+                                    <a href={'https://twitter.com/'+t.user.screen_name+'/status/'+t.id_str} target="_blank">Ver mais no Twitter</a>
                                 </div>
                             </div>
                             )
