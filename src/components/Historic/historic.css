@@ -39,7 +39,7 @@ body {
     background: #0A1744;
     display: flex;
     justify-content: space-between;
-    padding: 12px 0px 12px 0px;
+    padding: 12px 55px 12px 0px;
     font-weight: bold;
 }
 
@@ -54,10 +54,21 @@ body {
 .dateTime {
     display: flex;
     margin-top: 10px;
-    width: 40%;
+    
 }
 
-.listItems {
+/* .listItems {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #5985b566;
+    margin: 0 15px;
+    font-size: 14px;
+    font-weight: regular;
+    color: #72EFDB;
+    padding: 15px 0px;
+} */
+
+.contentList {
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid #5985b566;
@@ -68,9 +79,14 @@ body {
     padding: 15px 0px;
 }
 
-.datesTimes {
+/* .datesTimes {
     display: flex;
     width: 40%;
+} */
+
+.listDate {
+    display: flex;
+    
 }
 
 .hashtag {
@@ -78,11 +94,19 @@ body {
     font-size: 17px;
 }
 
-.hashtagName {
+/* .hashtagName {
+    color: white;
+} */
+
+.listHashtag {
     color: white;
 }
 
-.listItems .listMenuTop {
+/* .listItems .listMenuTop {
+    padding: 15px;
+} */
+
+.contentList .listMenuTop {
     padding: 15px;
 }
 
@@ -97,12 +121,24 @@ body {
     margin: 0px 0px 0px 50px;
 }
 
-.dates {
+/* .dates {
+    padding: 0px 0px 0px 5px;
+} */
+
+.contentBodyList {
+    display: flex;
+}
+
+.listDate {
     padding: 0px 0px 0px 5px;
 }
 
-.times {
+/* .times {
     padding: 0px 40px 0px 50px;
+} */
+
+.listHour {
+    padding: 0px 40px 0px 40px;
 }
 
 
@@ -141,7 +177,11 @@ body {
         padding: 0px 0px 0px 65px;
     }
 
-    .hashtagName {
+    /* .hashtagName {
+        padding: 0px 0px 0px 65px;
+    } */
+
+    .listHashtag {
         padding: 0px 0px 0px 65px;
     }
 
@@ -153,19 +193,38 @@ body {
         font-size: 24px;
     }
 
-    .listItems {
+    /* .listItems {
+        font-size: 24px;
+    } */
+
+    .contentList {
         font-size: 24px;
     }
     
     .dateTime {
         display: flex;
         margin-top: 10px;
+        margin-right: 65px;
+        
+    }
+
+    /* .datesTimes {
+        display: flex;
+        width: 20%;
+    } */
+
+    .listDate {
+        display: flex;
         width: 20%;
     }
 
-    .datesTimes {
+    .listHour {
+        padding: 0px 40px 0px 70px;
+    }
+
+    .contentBodyList {
         display: flex;
-        width: 20%;
+        justify-content: space-between;
     }
 
 }

@@ -33,10 +33,30 @@ function renderSair(){
   );
 }
 
+//link para o fetch
+//https://oieduardorabelo.medium.com/react-fetch-api-com-react-suspense-e-react-cache-16e8949e994
 
-export default function Historic() {
+/* Função para listar as buscas realizadas */
+function HistoricSearch(){
+
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+
+    fetch("https://api.airtable.com/v0/app6wQWfM6eJngkD4/tbl4mrtX1Owvos7eB?filterByFormula=NOT(%7BSquad%7D+%3D+'')&pageSize=10&sort%5B0%5D%5Bfield%5D=Data&sort%5B0%5D%5Bdirection%5D=desc&sort%5B1%5D%5Bfield%5D=Hora&sort%5B1%5D%5Bdirection%5D=desc&api_key=key2CwkHb0CKumjuM")
+      
+      .then(result => result.json())
+      .then(data => {
+        setData(data.records);
+        console.log(data.records);
+      })
+  })
+
+
+
+
     return (
-       <>
+      <>
        {/* Import da fonte */}
        <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet"></link>
           
@@ -74,61 +94,27 @@ export default function Historic() {
 
               {/* Conteúdo da lista */}
               <div className='listBackground'>
-                <div className='listItems'>
-                  <div className='hashtagName'>#hashtagname</div>
-                  <div className='datesTimes'>
-                    <div className='dates'>25/02</div>
-                    <div className='times'>09:30</div>
-                  </div>
-                </div>
-                <div className='listItems'>
-                  <div className='hashtagName'>#hashtagname</div>
-                  <div className='datesTimes'>
-                    <div className='dates'>25/02</div>
-                    <div className='times'>09:30</div>
-                  </div>
-                </div>
-                <div className='listItems'>
-                  <div className='hashtagName'>#hashtagname</div>
-                  <div className='datesTimes'>
-                    <div className='dates'>25/02</div>
-                    <div className='times'>09:30</div>
-                  </div>
-                </div>
-                <div className='listItems'>
-                  <div className='hashtagName'>#hashtagname</div>
-                  <div className='datesTimes'>
-                    <div className='dates'>25/02</div>
-                    <div className='times'>09:30</div>
-                  </div>
-                </div>
-                <div className='listItems'>
-                  <div className='hashtagName'>#hashtagname</div>
-                  <div className='datesTimes'>
-                    <div className='dates'>25/02</div>
-                    <div className='times'>09:30</div>
-                  </div>
-                </div>
-                <div className='listItems'>
-                  <div className='hashtagName'>#hashtagname</div>
-                  <div className='datesTimes'>
-                    <div className='dates'>25/02</div>
-                    <div className='times'>09:30</div>
-                  </div>
-                </div>
-                <div className='listItems'>
-                  <div className='hashtagName'>#hashtagname</div>
-                  <div className='datesTimes'>
-                    <div className='dates'>25/02</div>
-                    <div className='times'>09:30</div>
-                  </div>
-                </div>
-                
-              </div>
+                {data.map(
+                  item =>
+                  (
 
+                    <tr className='contentList' key={item.id}>
+                      <td className={"listHashtag"}>{item.fields.Hashtag}</td>
+                      <td className={"contentBodyList"}>
+                        <td className={"listDate"}>{item.fields.Data}</td>
+                        <td className={"listHour"}>{item.fields.Hora}</td>
+                      </td>
+                    </tr>
+
+                  )
+                )}
               </div>
+                    
             </div>
           </div>
-        </> 
+        </div>
+      </> 
     );
-  }
+}
+
+export default HistoricSearch;
