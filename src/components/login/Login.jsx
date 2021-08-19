@@ -1,16 +1,16 @@
-import React from 'react'
+import React, { Component } from 'react'
+import iconHome from '../../images/icon-home.svg'
+import { Link, withRouter } from 'react-router-dom';
+import logo from '../../images/logo.png'
 import ReactDOM from 'react-dom';
 import './login.css'
 import '../header/header.css'
-import iconHome from '../../images/icon-home.svg'
 import Historic from '../Historic/historic'
-import logo from '../../images/logo.png'
 import Header from '../header/header'
 import Footer from '../footer/footer'
 import Main from '../main/main'
 
 import Routes from "./routes";
-import { Link, withRouter } from 'react-router-dom';
 
 
 /*Função do botão Home*/
@@ -37,8 +37,23 @@ import { Link, withRouter } from 'react-router-dom';
 } */
 
 /*Função que retorna a tela de login*/
-function Login()
-{
+class Login extends Component {
+    state = {
+      email: "",
+      password: "",
+      error: ""
+    };
+  
+    handleLogin = async e => {
+      e.preventDefault();
+      const { email, password } = this.state;
+      if (!email || !password) {
+        this.setState({ error: "E-mail e senha obrigatórios!" });
+      } else {
+          this.props.history.push("/historic");
+      }
+    };
+render(){
     return (
         <>
         {/*Div que engloba toda a página*/}
@@ -62,11 +77,12 @@ function Login()
                 <div className='formContainer'>
                     <div>
                     {/*Área para colocar os dados e submeter o formulário de login*/}
-                    <form className='loginForm'>
+                    <form onSubmit={this.handleLogin} className='loginForm'>
                         <span className='formTitle'>Login</span>
-                        <input type='text' placeholder='Usuário'></input>
-                        <input type='password' placeholder='Senha'></input>
-                       <Link to='/historic'> <button>ACESSAR</button></Link>
+                        {this.state.error && <p className='errorMessage'>{this.state.error}</p>}
+                        <input type='email' placeholder='Usuário' onChange={e => this.setState({ email: e.target.value })}></input>
+                        <input type='password' placeholder='Senha' onChange={e => this.setState({ password: e.target.value })}></input>
+                       <button type='submit'>ACESSAR</button>
                     </form>
                     </div>
                 </div>
@@ -74,5 +90,6 @@ function Login()
         </div>
         </>
     )
+}
 }
 export default withRouter(Login)
