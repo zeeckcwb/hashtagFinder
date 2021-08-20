@@ -33,26 +33,29 @@ function renderSair(){
   );
 }
 
-//link para o fetch
-//https://oieduardorabelo.medium.com/react-fetch-api-com-react-suspense-e-react-cache-16e8949e994
 
 /* Função para listar as buscas realizadas */
 function HistoricSearch(){
-
+  
   const [data, setData] = useState([]);
+  const [itensPerPage, setItensPerPage] = useState(10); //setando 10 ítens por página
+  const [currentPage, setCurrentPage] = useState(0); //página inicial 0
+
+  const pages = Math.ceil(data.length / itensPerPage); 
+  const startIndex = currentPage * itensPerPage; 
+  const endIndex = startIndex + itensPerPage; 
+  const currentItens = data.slice(startIndex, endIndex); 
 
   useEffect(() => {
 
-    fetch("https://api.airtable.com/v0/app6wQWfM6eJngkD4/tbl4mrtX1Owvos7eB?filterByFormula=NOT(%7BSquad%7D+%3D+'')&pageSize=10&sort%5B0%5D%5Bfield%5D=Data&sort%5B0%5D%5Bdirection%5D=desc&sort%5B1%5D%5Bfield%5D=Hora&sort%5B1%5D%5Bdirection%5D=desc&api_key=key2CwkHb0CKumjuM")
+    fetch("https://api.airtable.com/v0/app6wQWfM6eJngkD4/tbl4mrtX1Owvos7eB?filterByFormula=(%7BSquad%7D+%3D+'5')&maxRecords=100&pageSize=100&sort%5B0%5D%5Bfield%5D=Data&sort%5B0%5D%5Bdirection%5D=asc&sort%5B1%5D%5Bfield%5D=Hora&sort%5B1%5D%5Bdirection%5D=desc&timeZone=America/Sao_Paulo&api_key=key2CwkHb0CKumjuM")
       
-      .then(result => result.json())
+      .then(resp => resp.json())
       .then(data => {
         setData(data.records);
-        console.log(data.records);
+        
       })
   })
-
-
 
 
     return (
@@ -79,6 +82,11 @@ function HistoricSearch(){
               {/* Título da página */}
               <h2>Buscas realizadas</h2>
 
+              <div className='buttonsPages'>{Array.from(Array(pages), (item, index) => { //criando os botões para passar o conteúdo, 10 por vez até mostrar todo o conteúdo
+                  return <button style= { index === currentPage ? {backgroundColor: "#0A1744", color: "#72EFDB"} : null} value={index} onClick={(e) => setCurrentPage(Number(e.target.value))}>{index + 1}</button>
+                } )}
+              </div>
+
               {/* Cabeçalho da lista */}
               <div className='list'>
 
@@ -94,22 +102,23 @@ function HistoricSearch(){
 
               {/* Conteúdo da lista */}
               <div className='listBackground'>
-                {data.map(
+                {currentItens.map(
                   item =>
                   (
 
-                    <tr className='contentList' key={item.id}>
-                      <td className={"listHashtag"}>{item.fields.Hashtag}</td>
-                      <td className={"contentBodyList"}>
-                        <td className={"listDate"}>{item.fields.Data}</td>
-                        <td className={"listHour"}>{item.fields.Hora}</td>
-                      </td>
-                    </tr>
+                    <div className='contentList' key={item.id}>
+                      <div className={"listHashtag"}>{item.fields.Hashtag}</div>
+                      <div className={"contentBodyList"}>
+                        <div className={"listDate"}>{item.fields.Data}</div>
+                        <div className={"listHour"}>{item.fields.Hora}</div>
+                      </div>
+                    </div>
 
                   )
                 )}
+                
               </div>
-                    
+
             </div>
           </div>
         </div>
