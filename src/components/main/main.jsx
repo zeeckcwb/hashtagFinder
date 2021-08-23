@@ -20,10 +20,13 @@ export default function Main(){
         document.getElementById("selectImages").classList.remove("active")
     }
 
+    /*Variáveis que recuperam o JSON da api do twitter*/
     let [tweets, setTweets] = useState([])
     let [images, setImages] = useState([])
 
+    /*Função utilizada para realizar o GET da api do twitter e retornar os últimos 10 tweets para apresentar como texto*/
     function getTweets(){
+        /*Recuperando o valor inserido no campo que insere a hashtag a ser buscada e fazendo o replace do caractere # caso o usuário tenha colocado */
         let hashtag = document.getElementById('enter').value.replace(/#/g, "")
         axios.get('https://cors.bridged.cc/https://api.twitter.com/1.1/search/tweets.json?q='+hashtag+'', {
             method: 'GET',
@@ -33,7 +36,9 @@ export default function Main(){
         }).then((resp) => {setTweets(resp.data.statuses)})
     }
 
+    /*Função utilizada para realizar o GET da api do twitter e retornar os últimos 10 tweets para apresentar como texto*/
     function getImages(){
+        /*Recuperando o valor inserido no campo que insere a hashtag a ser buscada e fazendo o replace do caractere # caso o usuário tenha colocado */
         let hashtag = document.getElementById('enter').value.replace(/#/g, "")
         axios.get('https://cors.bridged.cc/https://api.twitter.com/2/tweets/search/recent?query='+hashtag+'%20has:images&max_results=30&expansions=author_id,attachments.media_keys&media.fields=type,url,width,height', {
             method: 'GET',
@@ -44,9 +49,10 @@ export default function Main(){
         console.log(images)
     }
 
+    /*Função utilizada para execultar as funções de GET ao pressionar o ENTER no campo de inserção da hashtag*/
     const handler = (event) => {
         if (event.key === 'Enter') {
-           getTweets();
+           getTweets()
            getImages()
         }
      };
@@ -83,6 +89,7 @@ export default function Main(){
                     </div>
                     <div className="postResults">
                         <div id="postResultsImages" className="postResultsImages">
+                        {/* Iniciando o map responsável por popular as últimas 10 imagens recuperadas na variável images */}
                         {images.slice(0, 10).map((i, index) => {
                             return (
                                 <div className="imageContainer" key={index}>
@@ -95,9 +102,11 @@ export default function Main(){
                                 </div>
                             )
                         })}
+                        {/* Fim do map */}
                         </div>
 
                         <div id="postResultsText" className="postResultsText">
+                        {/* Iniciando o map responsável por popular os últimos 10 tweets recuperadas na variável tweets */}
                         {tweets.slice(0, 10).map((t, index) => {
                             return (
                                 <div className="textContainer" key={index}>
@@ -115,6 +124,7 @@ export default function Main(){
                                 </div>
                             )
                         })}
+                        {/* Fim do map */}
                         </div>
                     </div>
                 </div>
