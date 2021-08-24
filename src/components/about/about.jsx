@@ -16,7 +16,7 @@ function ListarSobre(){
     
     let [sobre, setSobre] = useState([]);
     let [squad, setSquad] = useState([]);
-
+    //Função para realizar o get do Sobre da table Projeto
     function getAbout(){
         axios.get('https://api.airtable.com/v0/app6wQWfM6eJngkD4/Projeto?filterByFormula=(%7BSquad%7D+%3D+%275%27)', {
             method: "GET",
@@ -27,7 +27,7 @@ function ListarSobre(){
         .then((resp) => {setSobre(resp.data.records[0].fields.Sobre)})
     }
     console.log(sobre);
-    
+    //Função para realisar o get dos membros do Squad 5 da table Equipe
     function getSquad(){
         axios.get('https://api.airtable.com/v0/app6wQWfM6eJngkD4/Equipe?filterByFormula=(%7BSquad%7D+%3D+%275%27)', {
             method: "GET",
@@ -40,11 +40,12 @@ function ListarSobre(){
 
     console.log(squad)
 
+    //Função para carregar as funções de get Sobre e get Squad
     function loading(){
         getAbout();
         getSquad();
     }
-
+    //Função para renderizar a home ao clicar no Botão "Home"
     function renderMainBotaoHome(){
         ReactDOM.render(
         <React.StrictMode>
@@ -55,7 +56,7 @@ function ListarSobre(){
             document.getElementById("root") 
         );
     }
-
+    //Função para renderizar a página login ao clicar no botão "Login"
     function renderLogin(){
         ReactDOM.render(
         <React.StrictMode>
