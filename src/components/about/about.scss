@@ -1,7 +1,9 @@
 //Container que engloba todos os conteúdos da página
 .aboutContainer{
     width: 100%;
-    margin: 80px 0px;
+    padding: 80px 0px 0px;
+    
+    
     //Conteudo dentro do container about
     .aboutContent{
         width: 100%;
@@ -136,11 +138,9 @@
                         .cardsImg{
                             width: 182px;
                             height: 182px;
-                            
-                            img{
-                                width: 100%;
-                                border-radius: 100%;
-                            }
+                            background-size: cover;
+                            background-position: top;
+                            border-radius: 50%;
                         }
                         .cardsText{
                             width: 276px;
@@ -184,6 +184,7 @@
                 margin-top: -2px;
                 padding: 50px 50px 0px;
                 background: #0A1744;
+                padding-bottom: 40px;
                 .quemSomosContent{
                     display: flex;
                     flex-direction: column;
@@ -221,6 +222,7 @@
                 margin-top: -2px;
                 padding: 50px 100px 0px;
                 background: #0A1744;
+                padding-bottom: 40px;
                 .quemSomosContent{
                     display: flex;
                     flex-direction: column;
