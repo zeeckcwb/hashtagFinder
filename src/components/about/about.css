@@ -1,5 +1,6 @@
 .aboutContainer {
   width: 100%;
+  padding: 80px 0px 0px;
 }
 
 .aboutContainer .aboutContent {
@@ -142,11 +143,9 @@
 .aboutContainer .aboutContent .quemSomos .quemSomosContent .quemSomosCards .cards .cardsImg {
   width: 182px;
   height: 182px;
-}
-
-.aboutContainer .aboutContent .quemSomos .quemSomosContent .quemSomosCards .cards .cardsImg img {
-  width: 100%;
-  border-radius: 100%;
+  background-size: cover;
+  background-position: top;
+  border-radius: 50%;
 }
 
 .aboutContainer .aboutContent .quemSomos .quemSomosContent .quemSomosCards .cards .cardsText {
@@ -188,6 +187,7 @@
     margin-top: -2px;
     padding: 50px 50px 0px;
     background: #0A1744;
+    padding-bottom: 40px;
   }
   .aboutContainer .aboutContent .quemSomos .quemSomosContent {
     display: flex;
@@ -223,6 +223,7 @@
     margin-top: -2px;
     padding: 50px 100px 0px;
     background: #0A1744;
+    padding-bottom: 40px;
   }
   .aboutContainer .aboutContent .quemSomos .quemSomosContent {
     display: flex;
