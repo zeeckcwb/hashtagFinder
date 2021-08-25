@@ -1,8 +1,22 @@
 import './main.css'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import axios from "axios"
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 export default function Main(){
+
+    /*Variável responsável por exibir e ocultar a modal de zoom da imagem*/
+    let [modalShow, setShowModal] = useState(false)
+    /*Variável responsável por armazenar a URL de cada imagem selecionada para dar zoom*/
+    let [urlImage, setUrlImage] = useState('')
+
+    /*Função responsável por pegar o ID da div pai da imagem clicada para dar zoom e também pegar o URL da imagem*/
+    function handleChange(event){
+        let id = event.target.id
+        setUrlImage(document.getElementById(id).style.backgroundImage.replace('url("', "").replace('")', ""))
+        setShowModal(true)
+    }
 
     /*Função utilizada para alternar as abas Tweets e Imagens no mobile*/
     function showImages(){
@@ -28,7 +42,7 @@ export default function Main(){
     function getTweets(){
         /*Recuperando o valor inserido no campo que insere a hashtag a ser buscada e fazendo o replace do caractere # caso o usuário tenha colocado */
         let hashtag = document.getElementById('enter').value.replace(/#/g, "")
-        axios.get('https://cors.bridged.cc/https://api.twitter.com/1.1/search/tweets.json?q='+hashtag+'', {
+        axios.get('https://cors.bridged.cc/https://api.twitter.com/1.1/search/tweets.json?q='+hashtag+'&lang=pt&result_type=recent', {
             method: 'GET',
             headers: {
                 Authorization: 'Bearer AAAAAAAAAAAAAAAAAAAAAFlKHgEAAAAApBW4nRyRkiogluzAbXlS4KuHlMU%3DFcR7r8N19LRnMHLVmYlFsod6Be6zUvZD2rxATotl6mLPAh2UEX'
@@ -40,13 +54,59 @@ export default function Main(){
     function getImages(){
         /*Recuperando o valor inserido no campo que insere a hashtag a ser buscada e fazendo o replace do caractere # caso o usuário tenha colocado */
         let hashtag = document.getElementById('enter').value.replace(/#/g, "")
-        axios.get('https://cors.bridged.cc/https://api.twitter.com/2/tweets/search/recent?query='+hashtag+'%20has:images&max_results=30&expansions=author_id,attachments.media_keys&media.fields=type,url,width,height', {
+        axios.get('https://cors.bridged.cc/https://api.twitter.com/2/tweets/search/recent?query='+hashtag+'%20has:images&max_results=50&expansions=author_id,attachments.media_keys&media.fields=type,url,width,height', {
             method: 'GET',
             headers: {
                 Authorization: 'Bearer AAAAAAAAAAAAAAAAAAAAAFlKHgEAAAAApBW4nRyRkiogluzAbXlS4KuHlMU%3DFcR7r8N19LRnMHLVmYlFsod6Be6zUvZD2rxATotl6mLPAh2UEX'
             },
         }).then((resp) => {setImages(resp.data.includes.media)})
-        console.log(images)
+    }
+
+    /*Função responsável por realizar o POST da hashtag buscada na API do Airtable*/
+    function postAirtable(){
+        let hashtag = document.getElementById('enter').value.replace(/#/g, "")
+
+        /*Recuperando a data e hora atual para enviar como valor do POST para a API*/
+        var data = new Date()
+        var day = String(data.getDate()).padStart(2, '0')
+        var month = String(data.getMonth() + 1).padStart(2, '0')
+        var year = data.getFullYear()
+        var today = day + '/' + month + '/' + year
+
+        var hour = String(data.getHours()).padStart(2, '0')
+        var minutes = String(data.getMinutes()).padStart(2, '0')
+        var currentTime = hour + ':' + minutes
+
+        /*Realizando o POST para o Airtable*/
+        var axios = require('axios');
+        var data = JSON.stringify({
+        "records": [
+            {
+            "fields": {
+                "Squad": "5",
+                "Hashtag": hashtag,
+                "Data": today,
+                "Hora": currentTime
+                }
+            }
+        ]
+        });
+
+        var config = {
+        method: 'post',
+        url: 'https://api.airtable.com/v0/app6wQWfM6eJngkD4/Buscas',
+        headers: {
+            'Authorization': 'Bearer key2CwkHb0CKumjuM',
+            'Content-Type': 'application/json',
+            'Cookie': 'brw=brwT6txT287hmhYVt'
+        },
+        data : data
+        };
+        axios(config)
+        .then(function(response){})
+        .catch(function (error) {
+        console.log(error);
+        });
     }
 
     /*Função utilizada para execultar as funções de GET ao pressionar o ENTER no campo de inserção da hashtag*/
@@ -54,8 +114,9 @@ export default function Main(){
         if (event.key === 'Enter') {
            getTweets()
            getImages()
+           postAirtable()
         }
-     };
+    }
 
 
     /*Inicio do component main*/
@@ -92,8 +153,8 @@ export default function Main(){
                         {/* Iniciando o map responsável por popular as últimas 10 imagens recuperadas na variável images */}
                         {images.slice(0, 10).map((i, index) => {
                             return (
-                                <div className="imageContainer" key={index}>
-                                    <div className="imageContent" style={{backgroundImage: `url(${i.url})`}}>
+                                <div className="imageContainer" key={index} >
+                                    <div id={"imageContent"+index} className="imageContent" onClick={(event) => handleChange(event)} style={{backgroundImage: `url(${i.url})`}}>
                                     </div>
                                     <div className="textContent">
                                         <p>Postado por:</p>
@@ -129,6 +190,16 @@ export default function Main(){
                     </div>
                 </div>
             </div>
+            {/* Início da modal */}
+            <div className="backdrop" style={{display: (modalShow ? 'block' : 'none')}} onClick={() => setShowModal(false)}></div>
+            <div className="modalContainer" style={{display: (modalShow ? 'block' : 'none')}}>
+                <div className="modalContent" style={{backgroundImage: `url(${urlImage})`}}>
+                        <div className="close" style={{display: (modalShow ? 'block' : 'none')}} onClick={() => setShowModal(false)}>
+                            Close
+                        </div>
+                </div>
+            </div>
+            {/* Fim da modal */}
         </section>
         /*Término do component main*/
     )
