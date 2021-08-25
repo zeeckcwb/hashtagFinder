@@ -5,7 +5,6 @@ import Historic from '../Historic/historic'
 import Home from '../main/main'
 import About from '../about/about'
 import StoreProvider from '../Store/Provider'
-import Api from './api'
 import StoreContext from '../Store/context'
 
 const RoutesPrivate = ({component: Component, ...rest}) => {
@@ -29,7 +28,6 @@ const Routes = () => (
                 <Route exact path='/' component={Home} />
                 <Route path="/about" component={About}/>
                 <Route path='/login' component={Login} />
-                <Route path='/api' component={Api} />
                 <RoutesPrivate path="/historic" component={Historic}/>
             </Switch>
         </StoreProvider>
