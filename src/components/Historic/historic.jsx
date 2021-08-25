@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import "./historic.css";
+import StoreContext from '../Store/context';
 import ReactDOM from 'react-dom';
 import Main from '../../components/main/main';
 import Header from '../header/header';
@@ -36,6 +37,9 @@ import { Link, withRouter } from 'react-router-dom'
  */
 
 function Historic() {
+  function logout(){
+    localStorage.removeItem("token")
+  }
     return (
        <>
        {/* Import da fonte */}
@@ -49,7 +53,7 @@ function Historic() {
                   </div>
                   <div className="headerButtons">
                       <Link exact to='/'><button className="buttonLight"><img src={iconHome} alt="icone home"/>HOME</button></Link>
-                      <Link to='/login'><button className="buttonDark"><img src={iconPowerOff} alt="icone power off"/>SAIR</button></Link>
+                      <Link to='/login'><button onClick={() => logout()} className="buttonDark"><img src={iconPowerOff} alt="icone power off"/>SAIR</button></Link>
                   </div>
               </div>
             </section>
