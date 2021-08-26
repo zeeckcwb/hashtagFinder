@@ -2,7 +2,7 @@ import {useState} from 'react'
 import axios from 'axios'
 import React from 'react'
 import './about.css';
-import Image from './about-ilustration.svg';
+import Image from '../../images/about-ilustration.svg';
 import Header from '../header/header'
 import ReactDOM from 'react-dom';
 import Main from '../main/main';
