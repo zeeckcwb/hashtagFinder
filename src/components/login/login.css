@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
-
 /*Varsão mobile*/
 .loginPage {
     background-color: #fff;
@@ -10,12 +9,10 @@
     background-position-y: -350px;
     font-family: 'Rubik', sans-serif;
 }
-
 .loginBody {
     display: flex;
     height: 100vh;
 }
-
 .formContainer {
     background-color: rgba(11, 23, 65, 0.6);
     border-radius: 14px;
@@ -24,7 +21,6 @@
     height: 460px;
     backdrop-filter: blur(30px);
 }
-
 .loginForm {
     display: flex;
     flex-direction: column;
@@ -32,6 +28,15 @@
     height: 336px;
     width: 272.39;
     margin-top: 62px;
+}
+
+.userError {
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    border-color: #000;
+    background-color: #FFF;
+    color: red;
 }
 
 .formTitle {
@@ -55,7 +60,6 @@ input {
     margin-bottom: 60.19px;
     color: #fff;
 }
-
 ::-webkit-input-placeholder {
     color: #FFF;
  }
@@ -85,22 +89,19 @@ input {
     margin-top: 8.31px;
     cursor: pointer;
 }
-
 /*Versão para desktop*/
-
 @media screen and (min-width: 1024px){
     .loginPage {
     background-image: url(../../images/mobile-hero-bg.jpg);
     background-size: 100% 100%;
     background-position-y: 0;
     }
-
     button {
         width: 39.25%;
         height: 56px;
         margin-top: 3.9%;
+        cursor: pointer;
     }
-
     .formContainer {
         width: 28.8%;
         min-width: 340px;
@@ -115,7 +116,6 @@ input {
     .loginForm {
         margin: auto;
     }
-
     .formTitle {
         margin-bottom: 13.56%;
     }
@@ -124,5 +124,4 @@ input {
         font-size: 17px;
         margin-bottom: 8%;
     }
-
 }

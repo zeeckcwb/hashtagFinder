@@ -7,12 +7,23 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+<<<<<<< HEAD
+    "airtable": "^0.11.1",
+    "axios": "^0.21.1",
+    "js-cookie": "^3.0.0",
+    "rand-token": "^1.0.1",
+=======
     "axios": "^0.21.1",
     "bootstrap": "^5.1.0",
+>>>>>>> f49199da583bd11a3ed2060da618fa46b3dbd499
     "react": "^17.0.2",
     "react-bootstrap": "^2.0.0-beta.5",
     "react-dom": "^17.0.2",
+<<<<<<< HEAD
     "react-infinite-scroll-component": "^6.1.0",
+=======
+    "react-router-dom": "^5.2.0",
+>>>>>>> e1eeec9eabc977e6f0f9368cf46fe099f57f7422
     "react-scripts": "4.0.3",
     "web-vitals": "^1.1.2"
   },
