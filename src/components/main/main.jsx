@@ -115,7 +115,6 @@ export default function Main(){
            getTweets()
            getImages()
            postAirtable()
-           GetCredentials()
         }
     }
 
@@ -129,7 +128,7 @@ export default function Main(){
                         <h1>Encontre hashtags de maneira fácil.</h1>
                     </div>
                     <div className="heroText">
-                        <p>{email} {password}Digite o que deseja no campo de buscas e confira os resultados no Twitter abaixo</p>
+                        <p>Digite o que deseja no campo de buscas e confira os resultados no Twitter abaixo</p>
                     </div>
                 </div>
                 <div className="heroSearch">
