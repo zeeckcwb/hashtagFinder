@@ -3,14 +3,11 @@ import axios from 'axios'
 import React from 'react'
 import './about.css';
 import Image from '../../images/about-ilustration.svg';
-import Header from '../header/header'
-import ReactDOM from 'react-dom';
-import Main from '../main/main';
 import Footer from '../footer/footer';
-import Login from '../login/Login';
 import IconHome from '../../images/icon-home.svg';
 import IconLogin from '../../images/icon-user-alt.svg';
 import Logo from '../../images/logo.png';
+import { Link, withRouter } from 'react-router-dom'
 
 function ListarSobre(){
     
@@ -45,28 +42,7 @@ function ListarSobre(){
         getAbout();
         getSquad();
     }
-    //Função para renderizar a home ao clicar no Botão "Home"
-    function renderMainBotaoHome(){
-        ReactDOM.render(
-        <React.StrictMode>
-            <Header/>
-            <Main/>
-            <Footer/>
-            </React.StrictMode>, 
-            document.getElementById("root") 
-        );
-    }
-    //Função para renderizar a página login ao clicar no botão "Login"
-    function renderLogin(){
-        ReactDOM.render(
-        <React.StrictMode>
-            <Header/>
-            <Login/>
-            </React.StrictMode>, 
-            document.getElementById("root") 
-        );
-    }
-    
+
     return (
         <>
         <section className="header">
@@ -75,8 +51,8 @@ function ListarSobre(){
                 <img src={Logo} alt="Logo hashtagfinder" />
             </div>
             <div className="headerButtons">
-                <button onClick={renderMainBotaoHome} className="buttonLight"><img src={IconHome} alt="icone home"/>HOME</button>
-                <button onClick={renderLogin} className="buttonDark"><img src={IconLogin} alt="icone power off"/>LOGIN</button>
+                <Link style={{ textDecoration: "none"}}to="/"><button className="buttonLight"><img src={IconHome} alt="icone home"/>HOME</button></Link>
+                <Link style={{ textDecoration: "none"}}to="/login"><button className="buttonDark"><img src={IconLogin} alt="icone power off"/>LOGIN</button></Link>
             </div>
         </div>
         </section>
@@ -143,8 +119,9 @@ function ListarSobre(){
                 </div>
             </div>
         </div>
+        <Footer/>
         </>
     )
 }
 
-export default ListarSobre;
+export default withRouter(ListarSobre);

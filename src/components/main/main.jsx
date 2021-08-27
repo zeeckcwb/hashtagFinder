@@ -2,6 +2,8 @@ import './main.css'
 import { useState } from 'react'
 import axios from "axios"
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Header from '../header/header'
+import Footer from '../footer/footer'
 
 
 export default function Main(){
@@ -115,7 +117,6 @@ export default function Main(){
            getTweets()
            getImages()
            postAirtable()
-           GetCredentials()
         }
     }
 
@@ -123,13 +124,14 @@ export default function Main(){
     /*Inicio do component main*/
     return(
         <section className="main">
+          <Header/>
             <div className="mainHero">
                 <div className="heroContent">
                     <div className="heroTitle">
                         <h1>Encontre hashtags de maneira fácil.</h1>
                     </div>
                     <div className="heroText">
-                        <p>{email} {password}Digite o que deseja no campo de buscas e confira os resultados no Twitter abaixo</p>
+                        <p>Digite o que deseja no campo de buscas e confira os resultados no Twitter abaixo</p>
                     </div>
                 </div>
                 <div className="heroSearch">
@@ -201,6 +203,7 @@ export default function Main(){
                 </div>
             </div>
             {/* Fim da modal */}
+          <Footer/>          
         </section>
         /*Término do component main*/
     )

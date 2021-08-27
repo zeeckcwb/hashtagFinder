@@ -121,6 +121,7 @@ function Login() {
                 <span className="formTitle">Login</span>
                 {error && <div className="userError">{error}</div>}
                 <input
+                  className="inputForm"
                   name="email"
                   type="email"
                   placeholder="Usuário"
@@ -128,13 +129,14 @@ function Login() {
                   value={values.email}
                 ></input>
                 <input
+                  className="inputForm"
                   name="password"
                   type="password"
                   placeholder="Senha"
                   onChange={onChange}
                   value={values.password}
                 ></input>
-                <button type="submit">ACESSAR</button>
+                <button className="formButton" type="submit">ACESSAR</button>
               </form>
             </div>
           </div>

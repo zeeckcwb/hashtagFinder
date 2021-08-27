@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import Login from "./Login";
-import Historic from "../Historic/historic";
+import HistoricSearch from "../Historic/historic";
 import Home from "../main/main";
 import About from "../about/about";
 import StoreProvider from "../Store/Provider";
@@ -29,7 +29,7 @@ const Routes = () => (
         <Route exact path="/" component={Home} />
         <Route path="/about" component={About} />
         <Route path="/login" component={Login} />
-        <RoutesPrivate path="/historic" component={Historic} />
+        <RoutesPrivate path="/historic" component={HistoricSearch} />
       </Switch>
     </StoreProvider>
   </BrowserRouter>

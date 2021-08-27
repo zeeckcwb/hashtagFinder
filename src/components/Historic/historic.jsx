@@ -1,41 +1,15 @@
 import React, {useEffect, useState} from 'react';
 import "./historic.css";
-import ReactDOM from 'react-dom';
-import Main from '../../components/main/main';
-import Header from '../header/header';
-import Footer from '../footer/footer';
 import logo from '../../images/logo.png';
 import iconHome from '../../images/icon-home.svg';
 import iconPowerOff from '../../images/icon-power-off.svg';
-import Login from '../login/Login';
-
-
-/* Função botão HOME */
-function renderMain(){
-  ReactDOM.render(
-      <React.StrictMode>
-          <Header/>
-          <Footer/>
-          <Main/>
-      </React.StrictMode>,
-      document.getElementById('root')
-  );
-}
-
-/* Função botão sair */
-function renderSair(){
-  ReactDOM.render(
-      <React.StrictMode>
-          <Header/>
-          <Login/>
-      </React.StrictMode>,
-      document.getElementById('root')
-  );
-}
-
+import { Link, withRouter } from 'react-router-dom'
 
 /* Função para listar as buscas realizadas */
 function HistoricSearch(){
+  function logout(){
+    localStorage.removeItem("token")
+  }
   
   const [data, setData] = useState([]);
   const [itensPerPage, setItensPerPage] = useState(10); //setando 10 ítens por página
@@ -70,8 +44,8 @@ function HistoricSearch(){
                       <img src={logo} alt="Logo hashtagfinder" />
                   </div>
                   <div className="headerButtons">
-                      <button onClick={renderMain} className="buttonLight"><img src={iconHome} alt="icone home"/>HOME</button>
-                      <button onClick={renderSair} className="buttonDark"><img src={iconPowerOff} alt="icone power off"/>SAIR</button>
+                  <Link style={{ textDecoration: "none"}} exact to='/'><button className="buttonLight"><img src={iconHome} alt="icone home"/>HOME</button></Link>
+                  <Link style={{ textDecoration: "none"}} to='/login'><button onClick={() => logout()} className="buttonDark"><img src={iconPowerOff} alt="icone power off"/>SAIR</button></Link>
                   </div>
               </div>
             </section>
@@ -126,4 +100,4 @@ function HistoricSearch(){
     );
 }
 
-export default HistoricSearch;
+export default withRouter(HistoricSearch);
