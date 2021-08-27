@@ -4,9 +4,10 @@ import axios from "axios"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from '../header/header'
 import Footer from '../footer/footer'
+import { withRouter } from 'react-router-dom'
 
 
-export default function Main(){
+function Main(){
 
     /*Variável responsável por exibir e ocultar a modal de zoom da imagem*/
     let [modalShow, setShowModal] = useState(false)
@@ -208,3 +209,5 @@ export default function Main(){
         /*Término do component main*/
     )
 }
+
+export default withRouter(Main)

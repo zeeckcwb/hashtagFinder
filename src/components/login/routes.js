@@ -26,6 +26,7 @@ const Routes = () => (
   <BrowserRouter>
     <StoreProvider>
       <Switch>
+        <Route path="/hashtagFinder" component={Home} />
         <Route exact path="/" component={Home} />
         <Route path="/about" component={About} />
         <Route path="/login" component={Login} />
