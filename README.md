@@ -1,4 +1,5 @@
 # hashtagFinder
+`teste`
 
 Projeto em grupo realizado como método de aprendizado pela newtab academy.
 O objetivo do projeto é desenvolver uma página web responsiva para visualização de mensagens e imagens com integração com a API do Twitter, no projeto existe um campo para inserção de uma tag, a qual será buscada na API do twitter e retornará as ultimas 10 mensagens e as ultimas 10 imagens postadas no twitter com a tag em questão.
